@@ -44,7 +44,7 @@ PyObject *Accelerate_Py(PyObject *self, PyObject *args)//, PyObject *a_lambdas, 
     for (auto i = 0; i < x_size; i++)
     {
         v[i].resize(y_size);
-        for (auto j = 0; j < x_size; j++)
+        for (auto j = 0; j < y_size; j++)
         {
             v[i][j] = PyFloat_AsDouble(PyList_GetItem(PyList_GetItem(values, i), j));
         }
@@ -55,7 +55,7 @@ PyObject *Accelerate_Py(PyObject *self, PyObject *args)//, PyObject *a_lambdas, 
     for (auto i = 0; i < x_size; i++)
     {
         v[i].resize(y_size);
-        for (auto j = 0; j < x_size; j++)
+        for (auto j = 0; j < y_size; j++)
         {
             PyList_SetItem(PyList_GetItem(values, i), j, PyFloat_FromDouble(v[i][j]));
         }
